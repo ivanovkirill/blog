@@ -5,7 +5,9 @@ require "sinatra/activerecord"
 Dir.glob('./models/*.rb') do |rb_file|
 	require "#{rb_file}"
 end
+
 set :database, "sqlite3:///db/blog.sqlite3"
+set :sessions, true
 
 helpers do
   def pretty_date(time)
@@ -59,6 +61,28 @@ get "/registrate" do
   @title = "Registrate"
   erb :"pages/registrate"
 end
+
+post "/registrate" do
+  @user = User.new
+  @user.email = params[:email]
+  @user.name = params[:name]
+  @user.password = params[:password]
+
+  if @user.save
+    redirect "/"
+  else
+    erb :"pages/registrate"
+  end
+end
+
+get "/sign_in" do
+  @title = "Sign in"
+  erb :"pages/sign_in"
+end
+ 
+post "/sign_in" do
+  session[:user_id] = User.authenticate(params).id
+end 
 
 put "/posts/:id" do
   @post = Post.find(params[:id])
