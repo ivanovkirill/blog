@@ -1,6 +1,1 @@
-blog
-====
-
-Rep only for blog
-
-====
+First blog with database and templates

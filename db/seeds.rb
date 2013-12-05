@@ -1,0 +1,5 @@
+Post.create(title: "My first post", body: "And this is the post's content.")
+Post.create(title: "Second post", body: "<strong> This must be with bold font</strong>")
+Post.create(title: "Noname post", body: "no body")
+User.create(email: "mail@mail.ru", password: "qwert", name: "Admin")
+Comment.create(body: "hate utf-8")
