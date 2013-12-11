@@ -2,11 +2,12 @@
 <body>
 <form method="post" action="/registrate" >
 </br>
+</br>
 	<p><b>Hello, %username% </b><Br>
-		<input type="email" name = "email" > Email<Br>
-		<input type="name" name= "name"> Your name<Br>
-		<input type="password" name= "password"> Your password<Br>
-		<p><input type="submit" value="Registrate"></p>
+		<input type="email" class="span4 form-control" name = "user[email]" placeholder="email">
+		<input type="name" class="span4 form-control" name= "user[name]" placeholder="name">
+		<input type="password" class="span4 form-control" name= "user[password]"placeholder="password">
+		<p><input type="submit"  class="btn btn-success" value="Sign up"><span class="glyphicon glyphicon-ok"></p>
 </form>
 </body>
 </html>

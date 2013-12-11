@@ -1,3 +1,4 @@
+</br>
 <h1>Edit Post</h1>
 <form action="/posts/<%= @post.id %>" method="post">
   <input type="hidden" name="_method" value="put" />
@@ -10,7 +11,7 @@
   <textarea id="post_body" name="post[body]" rows="20" cols="100"><%= @post.body %></textarea>
   <br />
   <br />
-  <input type="submit" value="Edit Post" />
+  <input type="submit"  class="btn btn-success" value="Edit Post" />
   <input type="hidden" name="_method" value="delete" />
-  <input type="submit" value="Delete Post" />
+  <input type="submit"  class="btn btn-danger" value="Delete Post" />
 </form>  

@@ -1,4 +1,7 @@
-<h1>Welcome to my blog!</h1>
+<!-- encoding: utf- -->8
+<% if session[:user]!=nil %>
+</br>
+<h1>Welcome to my blog, <%= session[:user].name %> !</h1>
 <ul>
 <% @posts.each do |post| %>
   <li>
@@ -8,3 +11,9 @@
   </li>
 <% end %>
 </ul>
+<% else %>
+</br>
+</br>
+<p> U need <a href="/sign_in"> sign in</a> </p>
+<p> or <a href="/registrate"> registrate</a> </p>
+<% end %>

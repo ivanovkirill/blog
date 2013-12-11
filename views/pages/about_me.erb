@@ -1,4 +1,10 @@
 <!-- encoding: utf-8 -->
-<h1>About Me</h1>
+<% if @user!=nil %>
+  <h1>About Me</h1>
+  <p>My name is: <%= @user.name %></p>
+  <p>My email: <%= @user.email %></p>
+<% else %>
 </br>
-<p>Hello </p>
+</br>
+  <a href="/sign_in">U need sign in to view this content</a>
+<% end %>
