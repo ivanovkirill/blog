@@ -1,0 +1,6 @@
+  {% for user in users.all %}
+      {{user.id}}
+      {{user.email}}
+    {% else %}
+      The collection is empty.
+    {% endfor %}
